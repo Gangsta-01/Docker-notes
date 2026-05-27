@@ -1,1 +1,14 @@
 ## Docker Notes ##
+
+Docker Basics Commands
+
+1. Docker Pull <Image Name>                                     <Pulles image from Docker Hub>
+2. Docker Run <Image Name>                                      <To run the container with pulling Image>
+3. Docker ps                                                    <To check which container are running>
+4. Docker ps -a                                                 <To check all running container>
+5. Docker rm <Image Id or Name>                                 <To delete the container>
+6. Docker rmi <Image Id or Name>                                <To delete the image> 
+7. Docker stop <Image Id or Name>                               <To stop running container>
+8. Docker start <Image Id or Name>                              <To start stoped container>
+9. Docker Logs <Image Id or Name>                               <To check all logs of container>
+10.Docker exec <Image Id or Name> /bin/bash                     <To login to intractive mode of container>
