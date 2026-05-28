@@ -1,0 +1,16 @@
+Docker Commands 
+
+* First we have to check the docker network *
+   
+   docker network ls                                                            <It will list all network in docker>
+   docker network create mongo-network                                          <will have to create a network>
+
+* To pull the image and run the container *
+  
+  docker run -d \
+> -p 27017:27017 \
+> --name mongo \
+> --network mongo-network \
+> -e MONGO_INITDB_ROOT_USERNAME=admin \
+> -e MONGO_INITDB_ROOT_PASSWORD=qwerty \
+> mongo
