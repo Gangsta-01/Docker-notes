@@ -1,0 +1,13 @@
+### Docker Networking ###
+
+1. Bridge Network       (It is the defauls network provided by docker networks we can create network according to the requirements).
+
+2. Host Network         (It can take Ip from the host machine on which the docker deaon is running).
+
+3. ipvlan Network       (This network we can assigne or define which Ip's are can be assing to the container).
+
+4. Overlay Network      (This network is used to connect multiple docker deamon's within the orgainzation).
+
+5. MACvlan Network      (This network can be use by the mac of any wireless device Eg, home wifi unable to trace).
+
+6. None Network         (This network is use when we don't want to assigne any network to the container).
