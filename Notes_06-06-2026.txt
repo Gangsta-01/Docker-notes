@@ -1,0 +1,23 @@
+## DOCKER VOLUMES ##
+
+## Create a docker volume 
+docker volume create <volume name>
+
+## Run a container with attached volume ##
+docker run -d \
+--name redis-lab \
+--mount source=<volume-name>,target=/app \
+-p 8080:80 \
+redis:latest
+
+## Check docker container logs ##
+docker logs <container-name>
+
+## Check full .json file of the container ##
+docker inspect <container-name>
+
+## Remove volume ##  --> First need to stop the running container 
+docker volume rm <volume-name>
+
+Imp: The storage inside the running container is called ephemeral storage.
+If the container is not attached to any external volume it known as ephemeral.
