@@ -21,3 +21,34 @@ docker volume rm <volume-name>
 
 Imp: The storage inside the running container is called ephemeral storage.
 If the container is not attached to any external volume it known as ephemeral.
+
+
+## Docker Bind Mounts ##
+
+## To bind the host machine file with container ##
+docker run -d \
+--name <container-name> \
+-v /home/vaibhav/project:/app \
+-p 8080:80 \
+nginx:latest
+
+  OR
+
+docker run -d \
+--name <container-name>
+--mount type=bind,source=/home/vaibhav/project,target=/app \
+-p 8080:80 \
+nginx:latest
+
+## Difference between Docker Volume and Bind Mount? ##
+
+A Docker Volume is managed by Docker and is primarily used for persistent application data such as databases. 
+A Bind Mount maps a specific directory from the host machine into the container and is commonly used during development to allow live code changes. 
+Volumes are more portable and Docker-managed, while Bind Mounts depend on host filesystem paths and are user-managed.
+
+✅ Bind Mounts
+✅ Named Volumes
+✅ Anonymous Volumes
+✅ Volume Lifecycle
+✅ Volume Sharing
+✅ Volume Pruning
