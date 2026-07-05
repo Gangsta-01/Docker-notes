@@ -1,0 +1,5 @@
+# Why use a multi-stage Docker build for React?
+
+# A good answer is:
+
+"The first stage contains the complete Node.js build environment needed to compile the application. The second stage copies only the compiled static assets into a lightweight Nginx image, reducing image size, improving security by excluding build tools and source code, and making deployments faster."
