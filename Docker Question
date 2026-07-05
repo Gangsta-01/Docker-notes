@@ -3,3 +3,20 @@
 # A good answer is:
 
 "The first stage contains the complete Node.js build environment needed to compile the application. The second stage copies only the compiled static assets into a lightweight Nginx image, reducing image size, improving security by excluding build tools and source code, and making deployments faster."
+
+
+# Why use npm ci instead of npm install inside Docker?
+
+Because Docker builds should be deterministic. npm ci installs exactly the versions specified in package-lock.json, is faster, and ensures every build is identical.
+
+# Why do we copy package.json first
+
+We copy package.json and package-lock.json first so Docker can cache the dependency installation layer. If only the application source changes but the dependencies remain the same, Docker reuses the cached npm ci layer instead of reinstalling all packages, making builds much faster.
+
+# Image vs Container
+
+Docker Image
+A read-only blueprint/template that contains the application, dependencies, runtime, and configuration.
+
+Docker Container
+A running instance created from a Docker image.
